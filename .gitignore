@@ -1,0 +1,5 @@
+# Unnecessry file types
+*.fig
+*.csv
+*.log
+*.asv
