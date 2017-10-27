@@ -1,0 +1,31 @@
+classdef Sensor
+    properties
+        location
+        number
+        %dist2
+        velocity
+        acceleration
+        coveringTarget
+        squareRadius
+        deltat
+        leastNum
+        leastLocation
+        explodeProb
+        leastCovering
+    end
+    methods
+         function obj=Sensor(target, r2)
+             obj.squareRadius=r2;
+             obj.number=target.number;
+             obj.deltat=sqrt(obj.squareRadius)/8;
+             %obj.dist2=target.dist2;
+             obj.location=target.location;
+             obj.velocity=zeros(2,obj.number);
+             obj.coveringTarget=speye(obj.number);
+             obj.velocity=zeros(2,obj.number);
+             obj.leastNum=obj.number;
+             obj.leastLocation=obj.location;
+             obj.leastCovering=[];
+         end
+    end
+end
